@@ -1,0 +1,13 @@
+:host{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+input{
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+}

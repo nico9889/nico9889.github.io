@@ -1,0 +1,7 @@
+<h3>My currently active projects:</h3>
+<div>
+  @for (project of projects; track project.name) {
+    <app-project [project]="project"></app-project>
+  }
+</div>
+

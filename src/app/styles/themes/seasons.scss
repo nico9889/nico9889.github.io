@@ -1,0 +1,76 @@
+@use '@angular/material' as mat;
+@use '../palettes/winter' as winter;
+@use '../palettes/spring' as spring;
+@use '../palettes/summer' as summer;
+@use '../palettes/fall' as fall;
+
+.fall{
+  @include mat.theme((
+    color: (
+      primary: fall.$primary-palette,
+      tertiary: fall.$tertiary-palette,
+    )
+  ));
+}
+
+.summer{
+  @include mat.theme((
+    color: (
+      primary: summer.$primary-palette,
+      tertiary: summer.$tertiary-palette,
+    )
+  ));
+}
+
+.spring{
+  @include mat.theme((
+    color: (
+      primary: spring.$primary-palette,
+      tertiary: spring.$tertiary-palette,
+    )
+  ));
+}
+
+.winter {
+  @include mat.theme((
+    color: (
+      primary: winter.$primary-palette,
+      tertiary: winter.$tertiary-palette,
+    )
+  ));
+}
+
+.snow {
+  .background.animation.first {
+    background-image: url("/assets/themes/big-flakes.svg");
+    background-position: 0 0;
+    background-size: 150px;
+    animation: animatedBackground 10s linear infinite;
+  }
+
+  .background.animation.second {
+    background-image: url("/assets/themes/flakes.svg") !important;
+    background-position: 0 0;
+    background-size: 150px;
+    animation: animatedBackground 5s linear infinite;
+  }
+
+  @keyframes animatedBackground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 150px;
+    }
+  }
+}
+
+.snow:not(.dark-mode){
+  .animation.first{
+    filter: invert(1);
+  }
+
+  .animation.second {
+    filter: invert(1);
+  }
+}

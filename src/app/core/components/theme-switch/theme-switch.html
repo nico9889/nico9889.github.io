@@ -1,0 +1,14 @@
+<mat-button-toggle-group name="theme" aria-label="Theme" [(ngModel)]="current" [hideSingleSelectionIndicator]="true">
+  @if (isAutoSupported()) {
+    <mat-button-toggle [value]="Theme.Auto" aria-label="Automatic">
+      <mat-icon fontIcon="routine"/>
+    </mat-button-toggle>
+  }
+  <mat-button-toggle [value]="Theme.Light" aria-label="Light theme">
+    <mat-icon fontIcon="light_mode"/>
+  </mat-button-toggle>
+  <mat-button-toggle [value]="Theme.Dark" aria-label="Dark theme">
+    <mat-icon fontIcon="dark_mode"/>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+<input type="color" name="themeColor" [(ngModel)]="color">

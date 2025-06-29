@@ -1,0 +1,21 @@
+@let project = this.project();
+<mat-card>
+  <mat-card-header>
+    @if (project.image) {
+      <img mat-card-image [ngSrc]="project.image" alt="{{project.name}} Image" width="48" height="48">
+    }
+    <mat-card-title-group>
+      <mat-card-title>{{ project.name }}</mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{ project.description }}
+  </mat-card-content>
+  <mat-card-footer>
+    @if (project.repository) {
+      <a mat-button [href]="project.repository" target="_blank">
+        <mat-icon fontIcon="archive"></mat-icon>
+        Repository</a>
+    }
+  </mat-card-footer>
+</mat-card>

@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button aria-label="Side menu show/hide button" (click)="switchSideNav()">
+      <mat-icon fontIcon="menu"></mat-icon>
+    </button>
+    @if(!isMobile()){
+      @for (page of pages; track page.title) {
+        <a mat-button [routerLink]="page.route">
+          <mat-icon [fontIcon]="page?.icon ?? 'deceased' "></mat-icon>
+          {{ page.title }}</a>
+      }
+    }
+
+  </mat-toolbar-row>
+</mat-toolbar>

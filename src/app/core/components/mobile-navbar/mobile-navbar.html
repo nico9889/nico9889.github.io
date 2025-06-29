@@ -1,0 +1,10 @@
+<nav mat-tab-nav-bar [tabPanel]="panel()">
+  @for (page of pages; track page.title) {
+    <a mat-tab-link [active]="link == page.route"
+       [routerLink]="page.route"
+       (click)="link=page.route"
+    >
+      <mat-icon [fontIcon]="page.icon ?? 'defunct'"/>
+    </a>
+  }
+</nav>

@@ -1,0 +1,25 @@
+<app-navbar [sideNav]="sideNav" [(closeMobileSidenav)]="closeMobileSidenav"/>
+<mat-drawer-container (backdropClick)="closeMobileSidenav.set(true)" [hasBackdrop]="isMobile()">
+  <mat-drawer
+    [mode]="drawerMode()" #sideNav
+              (touchstart)="touchStart.set($event.changedTouches[0].screenX)"
+              (touchend)="closeMobileSidenav.set(($event.changedTouches[0].screenX - this.touchStart() < -50))"
+
+  >
+    <app-sidenav/>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    @if (isMobile()) {
+      <mat-tab-nav-panel #tabPanel>
+        <router-outlet/>
+      </mat-tab-nav-panel>
+      @if(tabPanel){
+        <app-mobile-navbar [panel]="tabPanel"/>
+      }
+    }@else{
+      <router-outlet/>
+    }
+  </mat-drawer-content>
+</mat-drawer-container>
+
