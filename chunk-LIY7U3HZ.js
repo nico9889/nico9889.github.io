@@ -1,0 +1,3 @@
+import{Eb as e,Ya as a,ob as t,pb as n}from"./chunk-3HMHEU2Q.js";var m=class i{static \u0275fac=function(o){return new(o||i)};static \u0275cmp=a({type:i,selectors:[["app-home"]],decls:7,vars:0,template:function(o,s){o&1&&(t(0,"p"),e(1," Welcome to my "),t(2,"b"),e(3,"work-in-progress"),n(),e(4,` boring website!
+`),n(),t(5,"p"),e(6,` Today you won't find anything special here. Maybe check another day, or maybe check the projects page, you may find something interesting in there.
+`),n())},styles:["[_nghost-%COMP%]{display:flex;flex-direction:column}p[_ngcontent-%COMP%]{text-align:center;margin-left:auto;margin-right:auto;max-width:50%}"]})};export{m as Home};
