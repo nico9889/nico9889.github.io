@@ -12,13 +12,18 @@
 
     @if (isMobile()) {
       <mat-tab-nav-panel #tabPanel>
-        <router-outlet/>
+        <div class="router">
+          <router-outlet/>
+        </div>
+
       </mat-tab-nav-panel>
       @if(tabPanel){
         <app-mobile-navbar [panel]="tabPanel"/>
       }
     }@else{
-      <router-outlet/>
+      <div class="router">
+        <router-outlet/>
+      </div>
     }
   </mat-drawer-content>
 </mat-drawer-container>

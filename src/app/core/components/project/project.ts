@@ -7,10 +7,11 @@ import {
   MatCardTitle,
   MatCardTitleGroup
 } from '@angular/material/card';
-import {NgOptimizedImage} from '@angular/common';
+import {AsyncPipe, NgOptimizedImage} from '@angular/common';
 import {Project as ProjectModel} from "../../models/projects";
 import {MatButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
+import {MarkdownPipe} from 'ngx-markdown';
 
 @Component({
   selector: 'app-project',
@@ -24,7 +25,9 @@ import {MatIcon} from '@angular/material/icon';
     MatCardFooter,
     MatIcon,
     MatButton,
-    MatCardImage
+    MatCardImage,
+    MarkdownPipe,
+    AsyncPipe
   ],
   templateUrl: './project.html',
   styleUrl: './project.scss'
